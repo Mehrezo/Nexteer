@@ -1,0 +1,29 @@
+{% extends 'NexteerPoBundle::layout.html.twig' %}
+{##}
+{% block left_content %}
+{% include "NexteerPoBundle::menu_gauche.html.twig" %}
+{% endblock %}
+{##}
+{% block content %}
+
+<form action="{{ path('currency_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Edit</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('currency') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('currency_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

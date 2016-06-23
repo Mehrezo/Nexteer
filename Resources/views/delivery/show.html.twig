@@ -1,0 +1,45 @@
+<h1>delivery</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Prnumber</th>
+            <td>{{ entity.prnumber }}</td>
+        </tr>
+        <tr>
+            <th>Datelivraison</th>
+            <td>{{ entity.datelivraison|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Delivery</th>
+            <td>{{ entity.delivery }}</td>
+        </tr>
+        <tr>
+            <th>Fichierattachment</th>
+            <td>{{ entity.fichierattachment }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('delivery') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('delivery_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('delivery_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

@@ -1,0 +1,4 @@
+#Traduction des messages d'erreurs
+tutu.erreur.mehrez.test: Coucou c mehrez
+delivery.erreur.quantite.saisie: La quantité livrée doit être <= à la quantité commandée
+delivery.erreur.element_delivery.nbdepassequantite: La somme des quantités déjà livrées + la quantité actuelle dépasse la quantité commandé initialement!

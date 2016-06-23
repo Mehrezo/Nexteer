@@ -1,0 +1,43 @@
+
+<style>
+ /* Primary navigation */
+
+.glyph
+{
+font-family: 'Pictos';
+font-size: 4em;
+}
+
+#shortcuts a
+{
+-webkit-transition-property:color, text; 
+-webkit-transition-duration: 0.2s, 0.2s; 
+-webkit-transition-timing-function: linear, ease-in;
+
+-moz-transition-property:color, text; 
+-moz-transition-duration:0.2s; 
+-moz-transition-timing-function: linear, ease-in; 
+
+-o-transition-property:color, text; 
+-o-transition-duration:0.2s; 
+-o-transition-timing-function: linear, ease-in;
+} 
+
+#shortcuts a:hover{color:#009fe3;
+}
+
+#shortcuts .sublinks{
+	width:98%;
+	padding-top:5px;
+	position: relative;
+	float:left;
+	text-align:center;
+}
+</style>
+<ul role="complementary" id="shortcuts">
+    <li><a title="Accueil" href="{{ path('nexteer_accueil') }}"><span class="glyph global"></span><span class="sublinks">Accueil</span></a></li>
+    <li><a title="Prchase To Pay" href="{{ path('paymentorder') }}"><span class="glyph note"></span><span class="sublinks">Prchase To Pay</span></a></li>
+    <li><a title="Configuration" href="{{ path('pays') }}" class="current"><span class="glyph shuffle"></span><span class="sublinks">Configuration</span></a></li>
+    <li><a title="Configuration" href="{{ path('stats') }}" class="current"><span class="glyph chart"></span><span class="sublinks">Statistiques</span></a></li>
+    <li><a title="Administration" href=""><span class="glyph group"></span><span class="sublinks">Administration</span></a></li>
+</ul>

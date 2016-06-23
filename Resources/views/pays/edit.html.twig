@@ -1,0 +1,25 @@
+{% extends 'NexteerPoBundle::layout.html.twig' %}
+{##}
+{% block left_content %}
+{% include "NexteerPoBundle::menu_gauche.html.twig" %}
+{% endblock %}
+{##}
+{% block content %}
+
+
+<form action="{{ path('pays_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+
+    <table  width="100%">
+        <tr>
+            <td align="center"><a href="{{ path('pays') }}">
+                    <button class="green"  type="button">{{ 'general.back' | trans }}</button>
+                </a>
+            </td>
+            <td><button class="green" type="submit">Edit</button></td>
+        </tr>
+    </table>
+</form>
+
+
+{% endblock %}

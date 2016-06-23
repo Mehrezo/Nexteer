@@ -1,0 +1,53 @@
+{% extends 'NexteerPoBundle::layout.html.twig' %}
+{##}
+{% block left_content %}
+{% include "NexteerPoBundle::menu_gauche.html.twig" %}
+{% endblock %}
+{##}
+{% block content %}
+
+    <br><br>
+<table id="rounded-corner" summary="2007 Major IT Companies' Profit" class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Costcenter</th>
+            <th>Description</th>
+            <th>Pays_id</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('costcenter_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.costcenter }}</td>
+            <td>{{ entity.description }}</td>
+            <td>{{ entity.paysid }}</td>
+            
+            <td><a href="{{ path('costcenter_show', { 'id': entity.id }) }}"><img src="{{ asset('bundles/nexteerpo/images/Show.png') }}" alt="" title="" border="0" width="30"/></a></td>
+            <td><a href="{{ path('costcenter_edit', { 'id': entity.id }) }}"><img src="{{ asset('bundles/nexteerpo/images/Edit.png') }}" alt="" title="" border="0" width="30"/></a></td>
+            <td><a onClick="return(confirm('suppression.confirmation'));" href="{{ path('costcenter_delete', { 'id': entity.id }) }}"><img src="{{ asset('bundles/nexteerpo/images/Delete.png') }}" width="30"/></a></td>
+            {#<td>
+                <ul>
+                    <li>
+                        <a href="{{ path('costcenter_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('costcenter_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>#}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<a href="{{ path('costcenter_new') }}">
+    <img src="{{ asset('bundles/nexteerpo/images/Add.png') }}" alt="{{ 'general.administration.Add' | trans }}" title="" border="0" width="30" />{{ 'general.administration.Add' | trans }}
+</a>
+
+{% endblock %}

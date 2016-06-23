@@ -1,0 +1,111 @@
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Arnumber</th>
+            <td>{{ entity.arnumber }}</td>
+        </tr>
+        <tr>
+            <th>Pays</th>
+            <td>{{ entity.pays }}</td>
+        </tr>
+        <tr>
+            <th>Site</th>
+            <td>{{ entity.site }}</td>
+        </tr>
+        <tr>
+            <th>Departement</th>
+            <td>{{ entity.departement }}</td>
+        </tr>
+        <tr>
+            <th>Prnumber</th>
+            <td>{{ entity.prnumber }}</td>
+        </tr>
+        <tr>
+            <th>Applicant</th>
+            <td>{{ entity.applicant }}</td>
+        </tr>
+        <tr>
+            <th>Orderindex</th>
+            <td>{{ entity.orderindex }}</td>
+        </tr>
+        <tr>
+            <th>Item</th>
+            <td>{{ entity.Item }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ entity.description }}</td>
+        </tr>
+        <tr>
+            <th>Quantite</th>
+            <td>{{ entity.quantite }}</td>
+        </tr>
+        <tr>
+            <th>Unitemesure</th>
+            <td>{{ entity.unitemesure }}</td>
+        </tr>
+        <tr>
+            <th>Unitprice</th>
+            <td>{{ entity.unitprice }}</td>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <td>{{ entity.amount }}</td>
+        </tr>
+        <tr>
+            <th>Deliverydate</th>
+            <td>{{ entity.deliverydate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Glaccount</th>
+            <td>{{ entity.glaccount }}</td>
+        </tr>
+        <tr>
+            <th>Detailcc</th>
+            <td>{{ entity.detailcc }}</td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td>{{ entity.total }}</td>
+        </tr>
+        <tr>
+            <th>Currency</th>
+            <td>{{ entity.currency }}</td>
+        </tr>
+        <tr>
+            <th>Requestdate</th>
+            <td>{{ entity.requestdate|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Remarque</th>
+            <td>{{ entity.Remarque }}</td>
+        </tr>
+        <tr>
+            <th>Phonenoapp</th>
+            <td>{{ entity.phonenoapp }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('paymentorder') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('paymentorder_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('paymentorder_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

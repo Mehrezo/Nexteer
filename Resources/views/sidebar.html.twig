@@ -1,0 +1,144 @@
+<style>
+.big-menu {
+	color: white;
+	background: #0093c9 url(../images/img/old-browsers/colors/bg_big-menu.png) repeat-x;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0093c9), to(#00b8fd));
+	background: -webkit-linear-gradient(top, #0093c9, #00b8fd);
+	background: -moz-linear-gradient(top, #0093c9, #00b8fd);
+	background: -ms-linear-gradient(top, #0093c9, #00b8fd);
+	background: -o-linear-gradient(top, #0093c9, #00b8fd);
+	background: linear-gradient(top, #0093c9, #00b8fd);
+}
+.switch-on {
+		background: #00b8fd url(../images/img/old-browsers/colors/bg_a_green-gradient_active.png) repeat-x !important;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		background-size: 100% 100%;
+		background: -webkit-gradient(linear, left top, left bottom, from(#0093c9), to(#00b8fd)) !important;
+		background: -webkit-linear-gradient(top, #0093c9, #00b8fd) !important;
+		background: -moz-linear-gradient(top, #0093c9, #00b8fd) !important;
+		background: -ms-linear-gradient(top, #0093c9, #00b8fd) !important;
+		background: -o-linear-gradient(top, #0093c9, #00b8fd) !important;
+		background: linear-gradient(top, #0093c9, #00b8fd) !important;
+		border-color: #6d960c;
+}
+
+</style>
+
+<section id="menu" role="complementary">
+  <!-- This wrapper is used by several responsive layouts -->
+  <div id="menu-content">
+    <div id="profile">
+        {%if app.user.sexe =='F' %}
+            <img src="{{ asset('bundles/nexteerpo/images/img/user_female.png') }}" width="64" height="64" alt="User name" class="user-icon">
+           {% else %}
+            <img src="{{ asset('bundles/nexteerpo/images/img/user1.png') }}" width="64" height="64" alt="User name" class="user-icon">
+           {% endif %}
+        {{ 'general.message.hello' |trans }} <span class="name">{{ app.user.firstname }}&nbsp;{{ app.user.lastname }}</span>
+        <strong><a href="{{ path('fos_user_profile_show') }}">Profil</a></strong> |
+        <strong><a href="{{ path('fos_user_security_logout') }}">Logout</a></strong>
+        </div>
+    <header class="carbon">
+    <h4 class="thin">STATISTIQUES</h4>
+      <table width="260" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="360" style="font-size:0.85em">Coursiers en ligne</td>
+          <td width="11" align="left">25/132</td>
+        </tr>
+        <tr>
+          <td width="360" style="font-size:0.85em">Courses aujourd'hui</td>
+          <td width="11" align="left"><span class="fact-progress red">27 (-5% &#9660;)</span></td>
+        </tr>
+        <tr>
+          <td width="360" style="font-size:0.85em">Bons aujourd'hui</td>
+          <td width="11" align="left"><span class="fact-progress green">213 (+7.1% &#9650;)</span></td>
+        </tr>
+        <tr>
+          <td width="360" style="font-size:0.85em">Clients connect&eacute;</td>
+          <td width="11" align="left"><span class="fact-progress green">7 +27% &#9650;</span></td>
+        </tr>
+        <tr>
+          <td width="360" style="font-size:0.85em">Visiteurs sur le site</td>
+          <td width="11" align="left">89</td>
+        </tr>
+        <tr>
+          <td width="360" style="font-size:0.85em">Nouveaux Clients</td>
+          <td width="11" align="left">5</td>
+        </tr>
+        <tr>
+          <td width="360" style="font-size:0.85em">Factures non regl&eacute;es</td>
+          <td width="11" align="left">4</td>
+        </tr>
+        <tr>
+          <td  width="50%"  style="font-size:0.85em">V&eacute;hicules disponibles</td>
+          <td  width="50%" align="center"><table width="98%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><img src="{{ asset('bundles/nexteerpo/images/img/icons/vehicles/moto.png') }}" width="26" height="21" /></td>
+                <td><img src="{{ asset('bundles/nexteerpo/images/img/icons/vehicles/car.png') }}" width="26" height="21" /></td>
+                <td><img src="{{ asset('bundles/nexteerpo/images/img/icons/vehicles/truck.png') }}" width="26" height="21" /></td>
+              </tr>
+              <tr>
+                <td>42<small style="font-size:0.7em">/53</small></td>
+                <td>13<small style="font-size:0.7em">/15</small></td>
+                <td>7<small style="font-size:0.7em">/8</small></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+    </header>
+    <!-- By default, this section is made for 4 icons, see the doc to learn how to change this, in "basic markup explained" -->
+    <!--<ul id="access" class="children-tooltip">
+      <li><a href="?page=inbox" title="Messages"><span class="icon-mail"></span><span class="count">7</span></a></li>
+      <li><a href="?page=planning-coursiers" title="Planning des coursiers"><span class="icon-calendar"></span></a></li>
+      <li><a href="?page=login" title="Coursiers"><span class="icon-users"></span></a></li>
+      <li><a href="?page=login" title="Suivi Live"><span class="icon-eye"></span></a></li>
+    </ul>-->
+    
+    <ul class="unstyled-list">
+      <li class="title-menu">Factures en attente</li>
+      <li>
+        <ul class="calendar-menu">
+          <li> <a href="javascript:void(0);" title="See event">
+            <time datetime="2012-07-02"><b>02</b> Jul</time>
+            <small class="green">10:30</small> Soci&eacute;t&eacute; Laboratoire Goussain </a> </li>
+        </ul>
+      </li>
+      <li class="title-menu">Derni&egrave;rs messages</li>
+      <li>
+        <ul class="calendar-menu">
+          <li> <a href="javascript:void(0);" title="See event">
+            <time datetime="2012-07-02"><b>02</b> Jul</time>
+            <small class="green">10:30</small> Soci&eacute;t&eacute; Laboratoire Goussain </a> </li>
+        </ul>
+      </li>
+      <li>
+        <ul class="calendar-menu">
+          <li> <a href="javascript:void(0);" title="See event">
+            <time datetime="2012-07-02"><b>02</b> Jul</time>
+            <small class="green">10:30</small> Soci&eacute;t&eacute; Laboratoire Goussain </a> </li>
+        </ul>
+      </li>
+      <li>
+        <ul class="calendar-menu">
+          <li> <a href="javascript:void(0);" title="See event">
+            <time datetime="2012-07-02"><b>02</b> Jul</time>
+            <small class="green">10:30</small> Soci&eacute;t&eacute; Laboratoire Goussain </a> </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- End content wrapper -->
+  <!-- This is optional -->
+  <footer id="menu-footer">
+    <p class="button-height">
+      <input type="checkbox" name="reversed-layout" id="reversed-layout" class="switch float-right" onchange="$(document.body)[this.checked ? 'addClass' : 'removeClass']('reversed');">
+      <label for="reversed-layout" style="float:right; padding-right:0.7em;" class="icon-refresh icon-size2" title="icon-redo">Inverser</label>
+    </p>
+  </footer>
+</section>
+<!-- End sidebar/drop-down menu -->

@@ -1,0 +1,24 @@
+{# % extends 'NexteerPoBundle::layout.html.twig' % #}
+
+{# % block content % #}
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<b>Adresse de départ : </b>{{ adresse_depart }}<br>
+<b>Adresse d'arrivée : </b>{{ adresse_arrivee }}<br>
+<b>Distance : </b>{{ distance }}<br>
+<b>Durée : </b>{{ duree }}<br>
+    {% block map %}
+              {{ google_map_css(map) }}
+              {{ google_map_container(map) }}
+              {{ google_map_js(map) }}
+
+         </script>
+        <div id="map_canvas" class="map" style="height:250px" >
+       </div>
+    {% endblock %}
+
+{# % endblock % #}
+
+{% endblock fos_user_content %}

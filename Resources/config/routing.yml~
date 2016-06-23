@@ -1,0 +1,163 @@
+nexteer_accueil:
+    pattern:  /
+    defaults: { _controller: NexteerPoBundle:Default:index }
+pays:
+    pattern:  /pays
+    defaults: { _controller: NexteerPoBundle:pays:index }
+pays_new:
+    pattern:  /pays/add
+    defaults: { _controller: NexteerPoBundle:pays:new }
+pays_create:
+    pattern:  /pays/create
+    defaults: { _controller: NexteerPoBundle:pays:create }
+pays_show:
+    pattern:  /pays/show/{id}
+    defaults: { _controller: NexteerPoBundle:pays:show }
+pays_edit:
+    pattern:  /pays/edit/{id}
+    defaults: { _controller: NexteerPoBundle:pays:edit }
+pays_delete:
+    pattern:  /pays/delete/{id}
+    defaults: { _controller: NexteerPoBundle:pays:delete }
+pays_update:
+    pattern:  /pays/update/{id}
+    defaults: { _controller: NexteerPoBundle:pays:update }
+
+
+site:
+    pattern:  /site
+    defaults: { _controller: NexteerPoBundle:site:index }
+site_new:
+    pattern:  /site/add
+    defaults: { _controller: NexteerPoBundle:site:new }
+site_create:
+    pattern:  /site/create
+    defaults: { _controller: NexteerPoBundle:site:create }
+site_show:
+    pattern:  /site/show/{id}
+    defaults: { _controller: NexteerPoBundle:site:show }
+site_edit:
+    pattern:  /site/edit/{id}
+    defaults: { _controller: NexteerPoBundle:site:edit }
+site_delete:
+    pattern:  /site/delete/{id}
+    defaults: { _controller: NexteerPoBundle:site:delete }
+site_update:
+    pattern:  /site/update/{id}
+    defaults: { _controller: NexteerPoBundle:site:update }
+
+
+service:
+    pattern:  /service
+    defaults: { _controller: NexteerPoBundle:service:index }
+service_new:
+    pattern:  /service/add
+    defaults: { _controller: NexteerPoBundle:service:new }
+service_create:
+    pattern:  /service/create
+    defaults: { _controller: NexteerPoBundle:service:create }
+service_show:
+    pattern:  /service/show/{id}
+    defaults: { _controller: NexteerPoBundle:service:show }
+service_edit:
+    pattern:  /service/edit/{id}
+    defaults: { _controller: NexteerPoBundle:service:edit }
+service_delete:
+    pattern:  /service/delete/{id}
+    defaults: { _controller: NexteerPoBundle:service:delete }
+service_update:
+    pattern:  /service/update/{id}
+    defaults: { _controller: NexteerPoBundle:service:update }
+
+
+paymentterms:
+    pattern:  /paymentterms
+    defaults: { _controller: NexteerPoBundle:paymentterms:index }
+paymentterms_new:
+    pattern:  /paymentterms/add
+    defaults: { _controller: NexteerPoBundle:paymentterms:new }
+paymentterms_create:
+    pattern:  /paymentterms/create
+    defaults: { _controller: NexteerPoBundle:paymentterms:create }
+paymentterms_show:
+    pattern:  /paymentterms/show/{id}
+    defaults: { _controller: NexteerPoBundle:paymentterms:show }
+paymentterms_edit:
+    pattern:  /paymentterms/edit/{id}
+    defaults: { _controller: NexteerPoBundle:paymentterms:edit }
+paymentterms_delete:
+    pattern:  /paymentterms/delete/{id}
+    defaults: { _controller: NexteerPoBundle:paymentterms:delete }
+paymentterms_update:
+    pattern:  /paymentterms/update/{id}
+    defaults: { _controller: NexteerPoBundle:paymentterms:update }
+
+
+tva:
+    pattern:  /tva
+    defaults: { _controller: NexteerPoBundle:tva:index }
+tva_new:
+    pattern:  /tva/add
+    defaults: { _controller: NexteerPoBundle:tva:new }
+tva_create:
+    pattern:  /tva/create
+    defaults: { _controller: NexteerPoBundle:tva:create }
+tva_show:
+    pattern:  /tva/show/{id}
+    defaults: { _controller: NexteerPoBundle:tva:show }
+tva_edit:
+    pattern:  /tva/edit/{id}
+    defaults: { _controller: NexteerPoBundle:tva:edit }
+tva_delete:
+    pattern:  /tva/delete/{id}
+    defaults: { _controller: NexteerPoBundle:tva:delete }
+tva_update:
+    pattern:  /tva/update/{id}
+    defaults: { _controller: NexteerPoBundle:tva:update }
+
+currency:
+    pattern:  /currency
+    defaults: { _controller: NexteerPoBundle:currency:index }
+currency_new:
+    pattern:  /currency/add
+    defaults: { _controller: NexteerPoBundle:currency:new }
+currency_create:
+    pattern:  /currency/create
+    defaults: { _controller: NexteerPoBundle:currency:create }
+currency_show:
+    pattern:  /currency/show/{id}
+    defaults: { _controller: NexteerPoBundle:currency:show }
+currency_edit:
+    pattern:  /currency/edit/{id}
+    defaults: { _controller: NexteerPoBundle:currency:edit }
+currency_delete:
+    pattern:  /currency/delete/{id}
+    defaults: { _controller: NexteerPoBundle:currency:delete }
+currency_update:
+    pattern:  /currency/update/{id}
+    defaults: { _controller: NexteerPoBundle:currency:update }
+
+
+costcenter:
+    pattern:  /costcenter
+    defaults: { _controller: NexteerPoBundle:costcenter:index }
+costcenter_new:
+    pattern:  /costcenter/add
+    defaults: { _controller: NexteerPoBundle:costcenter:new }
+costcenter_create:
+    pattern:  /costcenter/create
+    defaults: { _controller: NexteerPoBundle:costcenter:create }
+costcenter_show:
+    pattern:  /costcenter/show/{id}
+    defaults: { _controller: NexteerPoBundle:costcenter:show }
+costcenter_edit:
+    pattern:  /costcenter/edit/{id}
+    defaults: { _controller: NexteerPoBundle:costcenter:edit }
+costcenter_delete:
+    pattern:  /costcenter/delete/{id}
+    defaults: { _controller: NexteerPoBundle:costcenter:delete }
+costcenter_update:
+    pattern:  /costcenter/update/{id}
+    defaults: { _controller: NexteerPoBundle:costcenter:update }
+
+

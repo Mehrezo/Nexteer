@@ -1,0 +1,126 @@
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/nexteerpo/css/style_button.css')}}" />
+<script type="text/javascript">
+$(document).ready(function() {
+// On récupère la balise <div> en question qui contient l'attribut « data-prototype » qui nous intéresse.
+    var $container = $('#nexteer_pobundle_deliverytype_fichierattachment');
+    //var $container1 = $('#nexteer_pobundle_deliverytype_elementdelivery');
+    // On définit une fonction qui va ajouter un champ.
+    function add_fichierattach() {
+        // On définit le numéro du champ (en comptant le nombre dechamps déjà ajoutés).
+        index = $container.children().length;
+        // On ajoute à la fin de la balise <div> le contenu del'attribut « data-prototype »,
+        // après avoir remplacé la variable $$name$$ qu'il contientpar le numéro du champ.
+        $container.append(
+            $($container.attr('data-prototype').replace(/\$\$name\$\$/g, index))
+        );
+    }
+    if($container.children().length == 0) {
+        add_fichierattach();
+    }
+    
+    /*function add_elementdelivery() {
+        // On définit le numéro du champ (en comptant le nombre dechamps déjà ajoutés).
+        index1 = $container1.children().length;
+        // On ajoute à la fin de la balise <div> le contenu del'attribut « data-prototype »,
+        // après avoir remplacé la variable $$name$$ qu'il contientpar le numéro du champ.
+        $container1.append(
+        $($container1.attr('data-prototype').replace(/\$\$name\$\$/g, index1))
+        );
+   }
+   if($container1.children().length == 0) {
+        add_elementdelivery();
+    }*/
+});
+</script>
+     
+{% if listeDelivery is defined %}
+<table><tr><td valign="top"> 
+<table border=1 cellspacing=0>
+        <tr>
+            <th>{{ "liste_delivery.checkbox" | trans }}</th>
+            <th>{{ "liste_delivery.code_delivery" | trans }}</th>
+            <th>{{ "liste_delivery.date_delivery" | trans }}</th>
+            <th>{{ "liste_delivery.fichierattachement" | trans }}</th>
+        </tr>
+        {% for delivery in listeDelivery %}
+            <tr>
+                <td>{{ delivery.getId() }}</td>
+                <td>{{ delivery.getDelivery() }}</td>
+                <td>{{ delivery.getDatelivraison()|date('Y-m-d') }}</td>
+                <td> {% if delivery.getFichierattachment() is not empty %}<a href="http://{{ delivery.getFichierattachment() }}" target="_blank">{{ delivery.getNamefile() }}</a> {% endif %}</td>
+            </tr>
+        {% endfor %}
+</table>
+</td><td valign="top">
+<table>
+    <tr><td><input class="button red" type="button" value="{{ "formdelivery.button.add_delivery" | trans }}" onClick="window.location = '{{ path('paymentorder_createdelivery', {'id': prnumber , 'new_crea': 1 }) }}'"> </td></tr>
+    <tr><td><input class="button red" type="button" value="{{ "formdelivery.button.add_invoice" | trans }}"> </td></tr>
+</table>
+</td></tr></table> 
+{% else %}
+{{ form_errors(form.fichierattachment) }}
+{{ form_errors(form) }}
+<form action="{{ path('delivery_create') }}" method="post" {{ form_enctype(form) }}>
+    <table width="100%">
+        <tr>
+            <td width='70'><b>{{ "formdelivery.supplier" | trans }}</b></td>
+            <td width='150'>{{ entities[0].suggestedsupplier }}</td>
+            <td width='90'></td>
+            <td align='right'><b>{{ form_label(form.fichierattachment, "formdelivery.fichierattachment" | trans ) }}</b></td>
+            <td>
+                     {{ form_widget(form.fichierattachment) }}
+                     {#{ form_errors(form.fichierattachment) }#}
+            </td>
+        </tr>
+        <tr>
+            <td><b>{{ "formdelivery.po" | trans }}</b></td>
+            <td>{{ form_errors(form.prnumber) }}
+                     {{ form_widget(form.prnumber, { 'attr': { 'value':entities[0].prnumber } }) }}</td>
+            <td></td>
+            <td align='right'><b>{{ form_label(form.delivery, "formdelivery.delivery" | trans ) }}</b></td>
+            <td>
+                     {{ form_errors(form.delivery) }}
+                     {{ form_widget(form.delivery, { 'attr': { 'value':codeDelivery } }) }}
+
+            </td>
+        </tr>
+    </table>
+    <table border=1 cellspacing=0>
+        <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Quantité livrée</th>
+            <th>Quantité commandée</th>
+            <th>Amount</th>
+            <th>Deliverydate</th>
+            <th>Total</th>
+            <th>Currency</th>
+            <th>Requestdate</th>
+            <th>Remain</th>
+        </tr>
+        {% for key, entity in entities %}
+            <tr>
+                <td>{{ entity.orderindex }}</td>
+                <td>{{ entity.Item }}</td>
+                <td>{{ entity.Description }}</td>
+                <td>
+                    {{ form_row(form.elementsDelivery[ key ].quantite) }}
+                    {{ form_row(form.elementsDelivery[ key ].orderindex) }}
+                    {{ form_errors(form.elementsDelivery[ key ].orderindex) }}
+                </td>
+                <td>{{ entity.quantite }}</td>
+                <td>{{ entity.amount }}</td>
+                <td>{% if entity.deliverydate %}{{ entity.deliverydate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ entity.total }}</td>
+                <td>{{ entity.currency }}</td>
+                <td>{% if entity.requestdate %}{{ entity.requestdate|date('Y-m-d') }}{% endif %}</td>
+                <td>  </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {{ form_rest(form) }}
+    <input type="submit" />
+</form>
+{% endif %}

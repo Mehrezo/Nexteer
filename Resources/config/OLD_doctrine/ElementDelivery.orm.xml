@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Nexteer\PoBundle\Entity\ElementDelivery" table="element_delivery">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idDelivery" type="integer" column="id_delivery" nullable="false"/>
+    <field name="orderindex" type="integer" column="orderindex" nullable="false"/>
+    <field name="quantite" type="integer" column="quantite" nullable="false"/>
+  </entity>
+</doctrine-mapping>

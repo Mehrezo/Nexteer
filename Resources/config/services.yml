@@ -1,0 +1,15 @@
+parameters:
+#    nexteer_po.example.class: Nexteer\PoBundle\Example
+
+services:
+#    nexteer_po.example:
+#        class: %nexteer_po.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    nexteer_po.validator.verifquantite:
+        class: Nexteer\PoBundle\Validator\VerifQuantiteValidator
+        arguments: [@request, @doctrine.orm.entity_manager]
+        scope: request
+        tags:
+               - { name: validator.constraint_validator, alias: nexteer_verifquantite }
+

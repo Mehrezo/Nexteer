@@ -1,0 +1,35 @@
+# messages.en.yml
+application.general.nom: Nexteer
+general.administration.Add: Create
+general.back: Back
+general.edit: Edit
+title.pays: List of Countries
+title.site: List of Sites
+title.service: List Of Services
+title.costcenter: List of Cost Centers
+title.nexteer_accueil: ''
+title.stats: Statistiques
+title.paymentorder: PaymentOrder List
+formdelivery.delivery: Delivery:
+formdelivery.fichierattachment: Add Attachement:
+formdelivery.supplier: Supplier:
+formdelivery.po: PO:
+pays.id: Id:
+pays.libelle: Libellé:
+pays.code: Code:
+  
+liste_delivery.checkbox:
+liste_delivery.code_delivery: Delivery
+liste_delivery.date_delivery: Date delivery
+liste_delivery.fichierattachement: File Attachement
+
+formdelivery.button.add_invoice: Add Invoice
+formdelivery.button.add_delivery: Add Delivery
+formdelivery.button.submit: Submit
+security.login.site_name: Nexteer - Purchasse To Pay
+general.Show: Show
+general.Edit: Edit
+general.Delete: Delete
+general.message.hello: Hello
+security.login.connectezvous: Connectez-vous
+security.login.demande_devis: Vous êtes particulier?

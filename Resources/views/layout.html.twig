@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{{ 'application.general.nom' |trans }}&trade;</title>
+{% include "NexteerPoBundle::header1.html.twig" %}
+
+{% block javascript %}
+        {% endblock %}
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$('.ask').jConfirmAction();
+	});
+	
+</script>
+
+{% include "NexteerPoBundle::header2.html.twig" %}
+</head>
+        
+<body {% block load_page %}{% endblock %} class="clearfix with-menu with-shortcuts">
+ <header role="banner" id="title-bar">
+        <h2>{{ 'application.general.nom' |trans }}&trade;</h2>
+</header>
+<!-- Button to open/hide menu -->
+<a href="javascript:void(0);" id="open-menu"><span>Menu</span></a>
+<!-- Button to open/hide shortcuts -->
+<a href="javascript:void(0);" id="open-shortcuts"><span class="icon-thumbs"></span></a>
+<section role="main" id="main">
+    {% block titre_section %}
+        <hgroup id="main-title" class="thin">
+            <h1>
+                {% block icone_section %}
+
+                {% endblock icone_section %}
+                {{ ("title." ~ app.request.attributes.get('_route')) | trans }}
+            </h1>
+            <h2>{{ "now"|date("d/m/Y") }}</h2>
+        </hgroup>
+    {% endblock %}
+  <div class="with-padding">
+    <div class="columns">
+      <div class="new-row twelve-columns">
+      {#---------------------------------------------------------------------------------------------------#}
+
+          <table>
+            <tr>
+                <td>{% block left_content %}{% endblock %} </td>
+                <td>{% block content %}{% endblock %}</td>
+            </tr>
+        </table>
+        </div>
+        {#---------------------------------------------------------------------------------------------------#}
+      </div>
+    </div>
+</section>
+{% include "NexteerPoBundle::side-tabs.html.twig" %}
+{% include "NexteerPoBundle::sidebar.html.twig" %}
+<!--{*% include "NexteerPoBundle::_javascript_bottom.html.twig" %*} -->
+</body>
+</html>

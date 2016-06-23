@@ -1,0 +1,23 @@
+{% extends 'NexteerPoBundle::layout.html.twig' %}
+{##}
+{% block left_content %}
+{% include "NexteerPoBundle::menu_gauche.html.twig" %}
+{% endblock %}
+{##}
+{% block content %}
+
+<form action="{{ path('currency_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Create</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('currency') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

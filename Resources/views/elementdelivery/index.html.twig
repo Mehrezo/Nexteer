@@ -1,0 +1,39 @@
+<table class="records_list" class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Id_delivery</th>
+            <th>Orderindex</th>
+            <th>Quantite</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('elementdelivery_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.iddelivery }}</td>
+            <td>{{ entity.orderindex }}</td>
+            <td>{{ entity.quantite }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('elementdelivery_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('elementdelivery_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('elementdelivery_new') }}">
+            <img src="{{ asset('bundles/nexteerpo/images/Add.png') }}" alt="{{ 'general.administration.Add' | trans }}" title="" border="0" width="30" />{{ 'general.administration.Add' | trans }}
+        </a>
+    </li>
+</ul>
