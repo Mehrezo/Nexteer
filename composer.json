@@ -31,7 +31,7 @@
     "friendsofsymfony/rest-bundle": "*",
     "friendsofsymfony/comment-bundle": "*",
     "friendsofsymfony/jsrouting-bundle": "1.5.*",
-    "stof/doctrine-extensions-bundle": "dev-master",
+    "stof/doctrine-extensions-bundle": "1.2.2",
     "doctrine/doctrine-fixtures-bundle": "dev-master"
   },
   "minimum-stability" : "dev"
