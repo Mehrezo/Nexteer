@@ -2,7 +2,7 @@
   "name": "Mehrez/Nexteer",
   "description": "Mon bundle Nexteer ",
   "autoload": {
-    "psr-4": {"Nexteer\\PoBundle\\NexteerPoBundle\\": ""}
+    "psr-4": {"Nexteer\\PoBundle\\": ""}
   },
   "require": {
     "php": ">=5.3.9",
