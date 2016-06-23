@@ -21,7 +21,7 @@
     "symfony/monolog-bundle": "~2.4",
 
     "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
-    "sensiolabs/security-checker": "3.0.x-dev",
+    "sensiolabs/security-checker": "dev-master/3.0.x-dev",
     "incenteev/composer-parameter-handler": "~2.0",
     "jms/security-extra-bundle": "dev-master/1.6.x-dev",
     "jms/di-extra-bundle": "1.7.1",
