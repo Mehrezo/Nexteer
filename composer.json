@@ -34,5 +34,6 @@
     "beberlei/DoctrineExtensions": "dev-master",
     "stof/doctrine-extensions-bundle": "dev-master",
     "doctrine/doctrine-fixtures-bundle": "dev-master"
-  }
+  },
+  "minimum-stability": "dev"
 }
