@@ -27,7 +27,7 @@
     "jms/di-extra-bundle": "1.7.1",
     "jms/serializer-bundle": "1.1.0",
     "friendsofsymfony/user-bundle": "*",
-    "vich/geographical-bundle": "*",
+    "vich/geographical-bundle": "dev-master",
     "friendsofsymfony/rest-bundle": "*",
     "friendsofsymfony/comment-bundle": "*",
     "friendsofsymfony/jsrouting-bundle": "1.5.*",
