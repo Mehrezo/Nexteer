@@ -15,8 +15,6 @@
     "twig/extensions": "1.0.*",
     "egeloen/google-map-bundle": "~2.2",
     "willdurand/geocoder": "*",
-    "widop/http-adapter": "1.1.x-dev",
-    "widop/http-adapter-bundle": "1.2.0",
     "symfony/assetic-bundle": "~2.3",
     "symfony/swiftmailer-bundle": "~2.3",
     "symfony/monolog-bundle": "~2.4",
