@@ -18,6 +18,8 @@
     "symfony/assetic-bundle": "~2.3",
     "symfony/swiftmailer-bundle": "~2.3",
     "symfony/monolog-bundle": "~2.4",
+    "widop/http-adapter": "1.1.x-dev",
+    "widop/http-adapter-bundle": "1.2.0",
     "sensio/distribution-bundle": "v3.0.36",
     "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
     "sensiolabs/security-checker": "3.0.x-dev",
