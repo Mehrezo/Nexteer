@@ -25,7 +25,7 @@
     "sensiolabs/security-checker": "3.0.x-dev",
     "incenteev/composer-parameter-handler": "~2.0",
     "jms/security-extra-bundle": "dev-master/1.6.x-dev",
-    "jms/di-extra-bundle": "dev-master",
+    "jms/di-extra-bundle": "1.7.1",
     "jms/serializer-bundle": "dev-master",
     "friendsofsymfony/user-bundle": "*",
     "vich/geographical-bundle": "*",
