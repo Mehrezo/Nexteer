@@ -1,5 +1,5 @@
 {
-  "name": "Mehrez/Nexteer",
+  "name": "mehrez/nexteer",
   "description": "Mon bundle Nexteer ",
   "autoload": {
     "psr-4": {"Nexteer\\PoBundle\\": ""}
