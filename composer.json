@@ -31,7 +31,6 @@
     "friendsofsymfony/rest-bundle": "*",
     "friendsofsymfony/comment-bundle": "*",
     "friendsofsymfony/jsrouting-bundle": "1.5.*",
-    "servergrove/shell-alias-bundle": "dev-master",
     "beberlei/DoctrineExtensions": "dev-master",
     "stof/doctrine-extensions-bundle": "dev-master",
     "doctrine/doctrine-fixtures-bundle": "dev-master"
